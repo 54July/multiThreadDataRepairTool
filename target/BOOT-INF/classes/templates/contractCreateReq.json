@@ -1,0 +1,100 @@
+{
+  "APP_ID": "qfpaydayloan",
+  "ACTION": "CONT_CREATE",
+  "IS_SYNC": "Y",
+  "NOTIFY_URL": "",
+  "SIGN_TYPE": "",
+  "CA_INFO": {
+    "RA_CODE": "FDD",
+    "CA_USER": {
+      "EMAIL_ID": "",
+      "MOBILE_NO": "${phone}",
+      "NATIONAL_ID": "${ssn}",
+      "USER_NAME": "${name}"
+    }
+  },
+  "BIZ_TEMP_MAP": [
+    {
+      "BIZ_KEY": "BRAND_CODE",
+      "BIZ_VAL": "LOAN_PAYDAY_NXD_OLD"
+    },
+    {
+      "BIZ_KEY": "CHANNEL_CODE",
+      "BIZ_VAL": "P2P"
+    }
+  ],
+  "BIZ_INFO": {
+    "BASE_INFO": [
+      {
+        "BIZ_KEY": "BIZ_ID",
+        "BIZ_VAL": "${loanId}"
+      },
+      {
+        "BIZ_KEY": "CONTRACT_ID",
+        "BIZ_VAL": "${contCode}"
+      }
+    ],
+    "BIZ_ENTS": [
+      {
+        "BIZ_KEY": "BASE_INFO",
+        "BIZ_ENT": {
+          "CONT_CODE": "${contCode}",
+          "DR_LOAN_ID": "",
+          "CONT_SIGN_DATE": "${contSignDate}",
+          "CONT_SIGN_PLCE": "",
+          "PROV": "",
+          "CITY": "",
+          "REGN": "",
+          "ADDR": "",
+          "ONE": "",
+          "TWO": "",
+          "THREE": "",
+          "HMT_STAT_DATE": "",
+          "HMT_END_DATE": "",
+          "CUS_SER_TEL": ""
+        }
+      },
+      {
+        "BIZ_KEY": "BOWR_INFO",
+        "BIZ_ENT": {
+          "USER_NAME": "${name}",
+          "CERT_TYPE": "${certTypeName}",
+          "CERT_NO": "${ssn}",
+          "USER_ADDR": "${address}",
+          "RESV_MOBL": "${phone}",
+          "USER_MAIL": "",
+          "FAX":"",
+          "WEI_CHAT":"",
+          "LOAN_BAND_DEPT_NAME": "${loanBandDeptName}",
+          "LOAN_BAND_DEPT_ACNT": "${loanBandDeptAcnt}",
+          "LOAN_BAND_DEPT": "${loanBandDept}",
+          "PAY_BAND_DEPT_NAME": "${payBandDeptName}",
+          "PAY_BAND_DEPT_ACNT": "${payBandDeptAcnt}",
+          "PAY_BAND_DEPT": "${payBandDept}"
+        }
+      },
+      {
+        "BIZ_KEY": "PROD_INFO",
+        "BIZ_ENT": {
+          "DAY_RATE": "${dayRate}",
+          "OVERDUE_RATE_TOTAL": "${overdueRateTotal}",
+          "OVERDUE_RATE_MGT": "${overdueRateMgt}",
+          "OVERDUE_RATE_INST": "${overdueRateInst}",
+          "OVERDUE_RATE_LIMT": "${overdueRateLimt}"
+        }
+      },
+      {
+        "BIZ_KEY": "BOWR_DETAIL",
+        "BIZ_ENT": {
+          "PRIC_AMT": "${pricAmt}",
+          "PMT_AMT": "${pmtAmt}",
+          "RISK_COMP": "${riskComp}",
+          "CNST_FEE": "${cnstFee}",
+          "LEND_DATE": "${lendDate}",
+          "PMT_DAY": "${pmtDay}",
+          "PMT_DUR_DAY": "${pmtDurDay}"
+        }
+      }
+    ]
+  }
+}

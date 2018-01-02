@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Implementation-Title: backend-framework
+Implementation-Version: 0.0.1-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: JuanChensh
+Implementation-Vendor-Id: com.breeze.framework
+Spring-Boot-Version: 1.5.3.RELEASE
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: com.breeze.framework.Application
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Created-By: Apache Maven 3.5.0
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/backend-fram
+ ework/
+

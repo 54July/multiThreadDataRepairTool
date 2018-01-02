@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<!-- 根据profile设置每个环境对于的 root log level -->
+	<!-- 每添加一个logger, 若根据不同的环境,打印的logger-level 不同, 在此设置, 如*** -->
+	<springProfile name="dev,sit,test">
+		<root level="DEBUG" />
+		<logger name="***" level="INFO" />
+	</springProfile>
+	<springProfile name="prod">
+		<root level="INFO" />
+		<logger name="***" level="INFO" />
+	</springProfile>
+
+	<!-- 控制台输出 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level%logger{36} - %msg%n</pattern>
+			<charset class="java.nio.charset.Charset">utf-8</charset>
+		</encoder>
+	</appender>
+	<!-- 日志输出级别 -->
+	<root>
+		<appender-ref ref="console" />
+	</root>
+</configuration>

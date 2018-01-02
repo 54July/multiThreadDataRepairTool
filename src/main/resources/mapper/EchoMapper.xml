@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的mapper接口对应，并实现其中的方法 ，用于java代码调用时识别指定xml的mapper文件-->
+<mapper namespace="com.breeze.framework.mapper.EchoMapper">	
+    <select id="selectAll" parameterType="com.breeze.framework.common.MergeQuery" resultType="java.util.HashMap">
+        select * from contractdayrate where flag is null or flag ='0'
+        <if test="pageSize != -1">
+			limit #{start,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}
+		</if>
+    </select>
+    <select id="selectAllCount" resultType="java.lang.Long">
+        select count(1) from contractdayrate where flag is null or flag ='0'
+    </select>
+    <insert id="insertInternet" parameterType="com.breeze.framework.entity.InternetUse" > 
+        insert into internetUse(id,loanId,interface_id,contract_no,file_type,online_path,download_path)  
+             values(#{id},#{loanId},#{interfaceId},#{contractNo},#{fileType},#{onlinePath},#{downloadPath})  
+    </insert>
+    <insert id="insertAll" parameterType="com.breeze.framework.entity.ContractCreate" > 
+        insert into contractdayrate(phone,ssn,name,loanId,contCode,contSignDate,certTypeName,address,loanBandDeptName,loanBandDeptAcnt,loanBandDept,payBandDeptName
+        ,payBandDeptAcnt,payBandDept,dayRate,overdueRateTotal,overdueRateMgt,overdueRateInst,overdueRateLimt,pricAmt,pmtAmt,riskComp,cnstFee,lendDate,pmtDay,pmtDurDay,infoServiceAmt,companyAddress,postManagementAmt)  
+        values(#{phone},#{ssn},#{name},#{loanId},#{contCode},#{contSignDate},#{certTypeName},#{address},#{loanBandDeptName},#{loanBandDeptAcnt},#{loanBandDept},#{payBandDeptName},
+        #{payBandDeptAcnt},#{payBandDept},#{dayRate},#{overdueRateTotal},#{overdueRateMgt},#{overdueRateInst},#{overdueRateLimt},#{pricAmt},#{pmtAmt},#{riskComp},#{cnstFee},#{lendDate},#{pmtDay},#{pmtDurDay},#{infoServiceAmt},#{companyAddress},#{postManagementAmt})  
+    </insert>
+    
+    <update id="updateContractcreate" parameterType="com.breeze.framework.entity.ContractCreate" >
+        update contractdayrate set flag=#{flag} where loanId=#{loanId}
+    </update>
+    
+</mapper>
