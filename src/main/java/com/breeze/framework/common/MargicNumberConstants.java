@@ -5,6 +5,7 @@ package com.breeze.framework.common;
  *
  */
 public class MargicNumberConstants {
+	//测试提交2
 
     //0
     public static final Integer n0 = 0;
